@@ -1,26 +1,26 @@
-import React from 'react';
-import { Image, Text, StyleSheet, View, Dimensions } from 'react-native';
+import React, {useEffect} from 'react';
+import {Image, Text, StyleSheet, View, Dimensions} from 'react-native';
+
 const imagem = require('../../../assets/topo.png');
 const width = Dimensions.get('screen').width;
 import Texto from '../../components/Texto';
+import logoVendedor from "../../../assets/logo.png";
 
-export default function Detalhes() {
-
-
+export default function Detalhes({titulo, tituloProduto, descricao, logoVendedor, nomeVendedor, preco}) {
 
     return (<>
 
-        <Texto style={styles.tituloCarrinho}>Carrinho</Texto>
+            <Texto style={styles.tituloCarrinho}>{titulo}</Texto>
 
-        <Texto style={styles.detalhes}>Detalhes do Carrinho</Texto>
-        <Texto style={styles.titulo}>Kit IOT</Texto>
-        <View style={styles.vendedorContainer}>
-            <Image style={styles.logoVendedor} source={require('../../../assets/logo.png')} />
-            <Texto style={styles.nomeVendedor}>Nuvem Cloud Shop</Texto>
-        </View>
-        <Texto style={styles.descricao}>Um lit iot que revoluciona a vida dos estudantes</Texto>
-        <Texto style={styles.preco}>R$ 99,00 </Texto>
-    </>
+            <Texto style={styles.detalhes}>Detalhes do Carrinho</Texto>
+            <Texto style={styles.titulo}>{tituloProduto}</Texto>
+            <View style={styles.vendedorContainer}>
+                <Image style={styles.logoVendedor} source={logoVendedor}/>
+                <Texto style={styles.nomeVendedor}>{nomeVendedor}</Texto>
+            </View>
+            <Texto style={styles.descricao}>{descricao}</Texto>
+            <Texto style={styles.preco}>{preco} </Texto>
+        </>
     );
 
 }

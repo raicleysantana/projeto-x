@@ -1,13 +1,13 @@
 import React from 'react';
-import { Image, Text, StyleSheet, Dimensions } from 'react-native';
-import topo from '../../../assets/topo.png'
+import {Image, Text, StyleSheet, Dimensions} from 'react-native';
+
 const width = Dimensions.get('screen').width;
 import Texto from '../../components/Texto';
-export default function Topo() {
+
+export default function Topo({titulo, imagem}) {
     return (<>
-        <Image style={styles.topo} source={topo} />
-        <Texto style={styles.tituloCarrinho}>Carrinho</Texto>
-    </>
+            <Image style={styles.topo} source={imagem}/>
+        </>
     );
 
 }
@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
         textAlign: "center",
         width: "100%",
         fontSize: 20,
+        fontWeight: "bold",
         lineHeight: 40,
-        fontWeight: 'bold',
     }
 });
